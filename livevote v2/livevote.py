@@ -6,13 +6,13 @@ import time
 
 os.system('')
 
-#서비스용 API 계정을 만들어야 API를 사용할 수 있는데, 그 때 서비스 계정이 접근할 수 있게 하는 키를 받아야 해용
+#서비스용 API 계정을 만들어야 API를 사용할 수 있는데, 그 때 서비스 계정이 접근할 수 있게 하는 키를 받아야 쓸수 있어요
 credentials = "여기에 키 넣기"
 
-#credentials에 넣은 키 내용을 바탕으로 객체를 생성해용
+#credentials에 넣은 키 내용을 바탕으로 객체를 생성
 gc = gspread.service_account_from_dict(credentials)
 
-#실시간 집계하는거예용
+#실시간 집계하는거
 def livevote():
     while True:
         sp = gc.open('test1')
