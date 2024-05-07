@@ -14,14 +14,18 @@ gc = gspread.service_account_from_dict(credentials)
 
 #실시간 집계하는거
 def livevote():
-    while True:
-        sp = gc.open('test1')
-        votelist = sp.sheet1.col_values(2)
-        cd1 = votelist.count('후보1')
-        cd2 = votelist.count('후보2')
-        cd3 = votelist.count('후보3')
-        log_print('진행', "후보1: " + str(cd1) + " 후보2: " + str(cd2) + " 후보3: " + str(cd3), 'blue', sliceprint=False)
-        time.sleep(5)
+    try:
+        while True:
+            sp = gc.open('test1')
+            votelist = sp.sheet1.col_values(2)
+            cd1 = votelist.count('후보1')
+            cd2 = votelist.count('후보2')
+            cd3 = votelist.count('후보3')
+            log_print('진행', "후보1: " + str(cd1) + " 후보2: " + str(cd2) + " 후보3: " + str(cd3), 'blue', sliceprint=False)
+            time.sleep(5)
+    except KeyboardInterrupt:
+    	log_print('중지', '집계를 중단합니다. 메뉴로 이동합니다.', 'red', sliceprint=False)
+    	menu()
 
 #파이썬은 goto가 없어서 참 불편해용
 def menu():
