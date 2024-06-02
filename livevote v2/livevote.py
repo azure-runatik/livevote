@@ -30,7 +30,7 @@ def livevote():
 #파이썬은 goto가 없어서 참 불편해용
 def menu():
     log_print('+', 'LIVEVOTE V2', 'green', sliceprint=False)
-    log_print('+', 'MADE BY HOSEO HIGHSCHOOL STUDENTS COUNCIL', 'green', sliceprint=False)
+    log_print('+', 'MADE BY STUDENTS COUNCIL', 'green', sliceprint=False)
     print('')
     log_print('알림', 'Enter키를 누르면 실시간 집계를 시작합니다. 5초 간격으로 수행하며 이는 코드에서 수정할 수 있습니다.', 'yellow', sliceprint=False)
     input("[PRESS ENTER]")
